@@ -20,7 +20,12 @@ Uma guerra de estratégia onde dois jogadores controlam gousmas com medidor de f
 - Compilador C (GCC, Clang, etc.)
 - Sistema operacional: Windows, Linux ou macOS
 
-## 📦 Como Compilar
+## Referências
+  - Bro Code
+  - Alura
+  - Stack Overflow
+  - Clube do Hardware
+  -  Reddit
+  - "Linguagem C Completa e Descomplicada" - André Backes
+ 
 
-```bash
-gcc -o mini-jogos main.c
