@@ -1,0 +1,429 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+int main() {
+	int lerInteiro() {
+    int valor;
+    int resultado;
+
+    while (1) {
+        resultado = scanf("%d", &valor); ///Isso é pra não aceitar letras, tem q trocar todos os scanfs
+                                         ///  |||||| = lerInteiro();
+
+        if (resultado == 1) {
+            return valor; // entrada válida
+        } else {
+            printf("Entrada invalida! Digite apenas numeros: ");
+            
+            // limpa o buffer
+            while (getchar() != '\n');
+        }
+    }
+}
+	
+	
+    int escolha, resposta, opcaoFinal;
+
+    srand(time(NULL));
+
+    do {
+        printf("\n===========================\n");
+        printf("||     MINI JOGOS!!      ||\n");
+        printf("===========================\n");
+
+        printf("\n1 - Perguntas e respostas\n2 - Cobra na caixa\n3 - Gousmas War\n4 - Sair\n");
+        escolha = lerInteiro();
+
+        // jogo de perguntas
+        if (escolha == 1) {
+
+            while (1) {
+
+                // pergunta 1
+                do {
+                	printf("\n================================================================================================================\n");
+                	printf("\nEsse jogo conciste em um jogo de 5 perguntas com 4 alternativas cada de conhecimentos gerais e sobre alguns jogos\n");
+                	printf("\n=================================================================================================================\n");
+                    printf("\nNo Pokemon qual o tipo super-efetivo contra Metal?\n");
+                    printf("\n1 - Fogo\n2 - Gelo\n3 - Planta\n4 - Agua\n");
+                    resposta = lerInteiro();
+
+                    if (resposta == 1)
+                        printf("Correto!\n");
+                    else if (resposta >= 2 && resposta <= 4)
+                        printf("Incorreto! Resposta: Fogo\n");
+                    else
+                        printf("Numero invalido!\n");
+
+                } while (resposta < 1 || resposta > 4);
+
+                // pergunta 2
+                do {
+                    printf("\nQual o mineral mais pesado do mundo?\n");
+                    printf("\n1 - Ouro\n2 - Diamante\n3 - Osmio\n4 - Tungstenio\n");
+                    resposta = lerInteiro();
+
+                    if (resposta == 3)
+                        printf("Correto!\n");
+                    else if (resposta >= 1 && resposta <= 4)
+                        printf("Incorreto! Resposta: Osmio\n");
+                    else
+                        printf("Numero invalido!\n");
+
+                } while (resposta < 1 || resposta > 4);
+
+                // pergunta 3
+                do {
+                    printf("\nQuantos ossos tem um tubarao?\n");
+                    printf("\n1 - 120\n2 - 60\n3 - 30\n4 - Nenhum\n");
+                    resposta = lerInteiro();
+
+                    if (resposta == 4)
+                        printf("Correto!\n");
+                    else if (resposta >= 1 && resposta <= 4)
+                        printf("Incorreto! Resposta: Nenhum\n");
+                    else
+                        printf("Numero invalido!\n");
+
+                } while (resposta < 1 || resposta > 4);
+
+                // pergunta 4
+                do {
+                    printf("\nQual o Tempo da luz do Sol ate a Terra?\n");
+                    printf("\n1 - 1 dia\n2 - 3 horas\n3 - 20 minutos\n4 - 8 minutos\n");
+                    resposta = lerInteiro();
+
+                    if (resposta == 4)
+                        printf("Correto!\n");
+                    else if (resposta >= 1 && resposta <= 4)
+                        printf("Incorreto! Resposta: 8 minutos\n");
+                    else
+                        printf("Numero invalido!\n");
+
+                } while (resposta < 1 || resposta > 4);
+
+                // pergunta 5
+                do {
+                    printf("\nOnde fica Machu Picchu?\n");
+                    printf("\n1 - Peru\n2 - Colombia\n3 - China\n4 - India\n");
+                    resposta = lerInteiro();
+
+                    if (resposta == 1)
+                        printf("Correto!\n");
+                    else if (resposta >= 1 && resposta <= 4)
+                        printf("Incorreto! Resposta: Peru\n");
+                    else
+                        printf("Numero invalido!\n");
+
+                } while (resposta < 1 || resposta > 4);
+
+                // interface de final de jogo
+                printf("\n===== FIM DO JOGO =====\n");
+                printf("1 - Recomecar\n2 - Voltar ao menu principal\n");
+                opcaoFinal = lerInteiro();
+
+                if (opcaoFinal == 1) {
+                    system("cls");
+                    continue;
+                } else if (opcaoFinal == 2) {
+                    system("cls");
+                    break;
+                } else {
+                    printf("Opcao invalida!\n");
+                }
+            }
+        }
+
+        // Cobra na caixa
+        else if (escolha == 2) {
+
+            while (1) {
+
+                int escolha1, escolha2;
+                char nome1[20], nome2[20];
+                int jogadorAtual;
+                int caixa, cobra, botao;
+                int c1=0,c2=0,c3=0,c4=0,c5=0;
+				
+				printf("\n================================================================================================================\n");
+				printf("Cobra na caixa, esse jogo conciste em 5 caixas uma delas vai ter um botão e a outra uma cobra, o objetivo eh o jogador\n encontrar o botao antes do outro, mas Olha a cobra, se encontra-la, vc ira perder instantaneamente");
+				printf("\n================================================================================================================\n");
+				
+				 // NOMES
+				 
+                printf("\nEscolha um nome:\n");
+               printf("1 - Janvys\n");
+               printf("2 - Andryw\n");
+               printf("3 - Jorge\n");
+               printf("4 - Frey\n");
+               printf("5 - Gusta\n");
+               printf("6 - Thiago\n");
+               printf("7 - Derson\n");
+
+               printf("\nJogador 1: ");
+               escolha1 = lerInteiro();
+
+               printf("Jogador 2: ");
+               escolha2 = lerInteiro();
+
+// Jogador 1
+      switch(escolha1) {
+      case 1: strcpy(nome1,"Janvys"); break;
+      case 2: strcpy(nome1,"Andryw"); break;
+      case 3: strcpy(nome1,"Jorge"); break;
+      case 4: strcpy(nome1,"Frey"); break;
+      case 5: strcpy(nome1,"Gusta"); break;
+      case 6: strcpy(nome1,"Thiago"); break;
+      case 7: strcpy(nome1,"Derson"); break;
+      default: strcpy(nome1,"jogador1");
+}  
+
+// Jogador 2
+      switch(escolha2) {
+      case 1: strcpy(nome2,"Janvys"); break;
+      case 2: strcpy(nome2,"Andryw"); break;
+      case 3: strcpy(nome2,"Jorge"); break;
+      case 4: strcpy(nome2,"Frey"); break;
+      case 5: strcpy(nome2,"Gusta"); break;
+      case 6: strcpy(nome2,"Thiago"); break;
+      case 7: strcpy(nome2,"Derson"); break;
+      default: strcpy(nome2,"jogador2");
+}
+
+// Mostra nomes escolhidos
+           printf("\nJogador 1: %s\n", nome1);
+           printf("Jogador 2: %s\n", nome2);
+
+// Sorteio de quem começa
+           jogadorAtual = rand()%2 + 1;
+
+           if (jogadorAtual == 1)
+           printf("%s comeca\n", nome1);
+           else
+           printf("%s comeca\n", nome2);
+
+// Qando começar 
+
+cobra = rand()%5 + 1;          ///Não mexer nisso aqui
+
+do {
+    botao = rand()%5 + 1;
+} while(botao == cobra);
+
+while (1) {
+
+    printf("\n   %s   %s   %s   %s   %s\n",
+        c1 ? "[X]" : "[1]",
+        c2 ? "[X]" : "[2]",
+        c3 ? "[X]" : "[3]",
+        c4 ? "[X]" : "[4]",
+        c5 ? "[X]" : "[5]"
+    );
+
+    // Turno com nome
+    if (jogadorAtual == 1)
+        printf("\n%s escolha: ", nome1);
+    else
+        printf("\n%s escolha: ", nome2);
+
+    caixa = lerInteiro();
+
+    if (caixa < 1 || caixa > 5) {
+        printf("Numero invalido\n");
+        continue;
+    }
+
+    if((caixa==1 && c1) || (caixa==2 && c2) || 
+       (caixa==3 && c3) || (caixa==4 && c4) || (caixa==5 && c5)) {
+        printf("Caixa ja aberta\n");
+        continue;
+    }
+
+    if(caixa==1) c1=1;
+    if(caixa==2) c2=1;
+    if(caixa==3) c3=1;
+    if(caixa==4) c4=1;
+    if(caixa==5) c5=1;
+
+    if (caixa == botao) {
+        if (jogadorAtual == 1)
+            printf("\n%s venceu\n", nome1);
+        else
+            printf("\n%s venceu\n", nome2);
+        break;
+    }
+    else if (caixa == cobra) {
+        if (jogadorAtual == 1)
+            printf("\n%s perdeu\n", nome1);
+        else
+            printf("\n%s perdeu\n", nome2);
+        break;
+    }
+    else {
+        printf("Caixa vazia\n");
+    }
+
+    jogadorAtual = (jogadorAtual == 1) ? 2 : 1;
+}
+
+                printf("\n===== FIM DO JOGO =====\n");
+                printf("1 - Recomecar\n2 - Voltar ao menu principal\n");
+                opcaoFinal = lerInteiro();
+
+                if (opcaoFinal == 1) {
+                    system("cls");
+                    continue;
+                } else if (opcaoFinal == 2) {
+                    system("cls");
+                    break;
+                }
+            }
+        } else if (escolha == 3) {
+
+    int opcaoFinal;
+
+    while (1) {
+
+        int furia[4] = {1,1,1,1};
+        int ativa[4] = {1,1,1,1};
+        int jogadorAtual = 1;
+        int acao;
+
+                    printf("\n================================================================================================================\n");
+                	printf("\nEsse jogo conciste em uma guerra de gousmas, os jogadores comecam com 2 gousmas com 1 de furia cada, ao atacar o medidor de furia aumenta do atacado aumenta aumentando o seu dano, quando o medidor de furia chegar em 5 a gousmas eh destruida mas o jogador pode se dividir, perdendo meade de sua furia mas recebendo mais uma gousmas com o limite de duas\n por jogador\n");
+                	printf("\n=================================================================================================================\n");
+
+        while (1) {
+
+            // ===== EXIBIR ESTADO =====
+            printf("\nJogador 1:\n");
+            printf("G1: %s (%d)\n", ativa[0] ? "Viva" : "Destruida", furia[0]);
+            printf("G2: %s (%d)\n", ativa[1] ? "Viva" : "Destruida", furia[1]);
+
+            printf("\nJogador 2:\n");
+            printf("G1: %s (%d)\n", ativa[2] ? "Viva" : "Destruida", furia[2]);
+            printf("G2: %s (%d)\n", ativa[3] ? "Viva" : "Destruida", furia[3]);
+
+            printf("\nTurno do Jogador %d\n", jogadorAtual);
+            printf("1 - Atacar\n2 - Dividir\n");
+            acao = lerInteiro();
+
+            int minha_base = (jogadorAtual == 1) ? 0 : 2;
+            int inimigo_base = (jogadorAtual == 1) ? 2 : 0;
+
+            // ================= ATAQUE =================
+            if (acao == 1) {
+                int atacante, alvo;
+
+                printf("Escolha sua Gousma (1 ou 2): ");
+                atacante = lerInteiro();
+
+                printf("Escolha alvo inimigo (1 ou 2): ");
+                alvo = lerInteiro();
+
+                int iA = minha_base + atacante - 1;
+                int iAlvo = inimigo_base + alvo - 1;
+
+                if (ativa[iA] && ativa[iAlvo]) {
+                    furia[iAlvo] += furia[iA];
+                    printf("Ataque realizado!\n");
+                } else {
+                    printf("Escolha invalida\n");
+                    continue;
+                }
+            }
+
+            // ================= DIVIDIR =================
+            else if (acao == 2) {
+                int d, qtd;
+
+                printf("Escolha Gousma doadora (1 ou 2): ");
+                d = lerInteiro();
+
+                int iD = minha_base + d - 1;
+                int iR = (d == 1) ? minha_base + 1 : minha_base;
+
+                if (!ativa[iD] || furia[iD] <= 1) {
+                    printf("Invalido\n");
+                    continue;
+                }
+
+                printf("Quanto transferir? ");
+                qtd = lerInteiro();
+
+                if (qtd < 1 || qtd >= furia[iD]) {
+                    printf("Valor invalido\n");
+                    continue;
+                }
+
+                if (!ativa[iR]) {
+                    ativa[iR] = 1;
+                    printf("Gousma reviveu!\n");
+                }
+
+                furia[iD] -= qtd;
+                furia[iR] += qtd;
+            }
+
+            // ===== VERIFICAR DESTRUICAO =====
+            int i;
+
+         for (i = 0; i < 4; i++) {
+         if (furia[i] > 5 && ativa[i]) {
+                ativa[i] = 0;
+              printf("Gousma %d destruida!\n", i+1);
+    }
+}
+
+            // ===== VERIFICAR FIM =====
+            if (!ativa[0] && !ativa[1]) {
+                printf("\nJogador 2 venceu!\n");
+                break;
+            }
+            if (!ativa[2] && !ativa[3]) {
+                printf("\nJogador 1 venceu!\n");
+                break;
+            }
+
+            jogadorAtual = (jogadorAtual == 1) ? 2 : 1;
+        }
+
+        // ===== FINAL =====
+        printf("\n===== FIM DO JOGO =====\n");
+        printf("1 - Recomeçar\n");
+        printf("2 - Voltar ao menu principal\n");
+        opcaoFinal = lerInteiro();
+
+        if (opcaoFinal == 1) {
+        
+            system("cls");
+            continue;
+        } 
+        else if (opcaoFinal == 2) {
+            system("cls");
+            break;
+        } 
+        else {
+            printf("Opcao invalida!\n");
+        }
+    }
+}
+			
+			
+			
+		/// Jogo 1 Yves
+		/// Jogo 2 Lucas Braz
+		/// jogo 3 Yves e Braz
+			
+			/// feito em 23 dias ao todo em media 2 a 3 horas por dia alem de pesquisas sobre algumas bibliotecas
+			
+			
+		
+
+    } while (escolha != 4);
+
+    printf("\nOBRIGADO POR JOGAR\nSaindo...\n");
+    return 0;
+}
