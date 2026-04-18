@@ -2,7 +2,7 @@
 
 Um projeto de três mini-jogos desenvolvidos em linguagem C.
 
-**Desenvolvedores:** Jean Yves e Lucas Braz
+**Desenvolvedores:** Jean Yves
 
 ## 📋 Jogos Inclusos
 
